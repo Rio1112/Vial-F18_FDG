@@ -1,0 +1,13 @@
+ObjectType = Image
+NDims = 3
+BinaryData = True
+BinaryDataByteOrderMSB = False
+CompressedData = False
+TransformMatrix = 1 0 0 0 1 0 0 0 1
+Offset = 0 -19.5 -34.5
+CenterOfRotation = 0 0 0
+AnatomicalOrientation = RAI
+ElementSpacing = 1 1 1
+DimSize = 1 40 70
+ElementType = MET_DOUBLE
+ElementDataFile = dose_with_uncertainty_from_doseactor_dose_det_superior-dose_uncertainty.raw

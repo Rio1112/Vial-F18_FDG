@@ -1,0 +1,52 @@
+{
+  "n_primarios_simulados": 100000000,
+  "actividad_objetivo_mci": 10.0,
+  "physics_list": "QGSP_BIC_EMZ",
+  "fuente": "F-18 (ion 9 18), disuelto en waterCil, geometria cilindro",
+  "energia_media_por_decaimiento_MeV": 1.2315749,
+  "geometria": {
+    "radial_mm": {
+      "agua": [
+        0,
+        11.0
+      ],
+      "vidrio": [
+        11.0,
+        12.5
+      ],
+      "cavidad_aire": [
+        12.5,
+        16.5
+      ],
+      "plomo": [
+        16.5,
+        48.5
+      ],
+      "acero": [
+        48.5,
+        50.5
+      ],
+      "det_palma_centro": -55.0,
+      "det_torso_centro": -200.5
+    },
+    "axial_mm": {
+      "agua": [
+        -35.5,
+        -9.2
+      ],
+      "cavidad_aire": [
+        -9.2,
+        37.0
+      ],
+      "plomo": [
+        37.0,
+        55.75
+      ],
+      "acero": [
+        55.75,
+        57.75
+      ],
+      "det_dedos_centro": 68.25
+    }
+  }
+}

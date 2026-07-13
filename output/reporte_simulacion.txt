@@ -1,0 +1,34 @@
+=================================================================
+  REPORTE — CT/A-30P con F-18 FDG
+  Generado: 2026-07-02 10:49:48
+=================================================================
+
+PARÁMETROS
+-----------------------------------------------------------------
+  Partículas simuladas : 1
+  Partícula            : ion F-18 (Z=9, A=18)
+  Física               : QGSP_BIC_EMZ + decay
+  Proceso              : β⁺ → e⁺ → aniquilación → 2γ × 511 keV
+  Blindaje Pb lateral  : 32 mm (~30 mm especificado)
+  Blindaje Pb base/tapa: 18.75 mm
+  Acero inoxidable     : 2 mm
+
+EQUIVALENCIA TEMPORAL (referencia: 10 mCi de F-18)
+-----------------------------------------------------------------
+  Actividad            : 10 mCi = 3.7000e+08 Bq
+  Partículas simuladas : 1
+  Equivalen a          : 0.000000 s
+                       = 0.0000 ms
+  Factor para 1 seg    : ×370000000.0
+
+TRANSMITANCIA DEL BLINDAJE (Grupo A)
+-----------------------------------------------------------------
+
+DOSIS POR DETECTOR
+-----------------------------------------------------------------
+  Detector                       Edep (MeV)    Dosis (Gy)   µSv (sim)  µSv/s @10mCi
+  -------------------------------------------------------------------------------
+
+FIGURAS
+-----------------------------------------------------------------
+  2_mapa_posicional.png
