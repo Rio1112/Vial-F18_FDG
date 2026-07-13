@@ -238,13 +238,13 @@ if __name__ == "__main__":
     dose_perfil_radial.hit_type    = "random"
     dose_perfil_radial.dose.active = True
 
-    dose_perfil_axial             = sim.add_actor("DoseActor", "dose_perfil_axial")
-    dose_perfil_axial.attached_to = "world"
-    dose_perfil_axial.size        = [5, 5, 560]     
-    dose_perfil_axial.spacing     = [5.0 * mm, 5.0 * mm, 0.25 * mm] 
-    dose_perfil_axial.translation = [0, 0, 0]
-    dose_perfil_axial.hit_type    = "random"
-    dose_perfil_axial.dose.active = True
+#    dose_perfil_axial             = sim.add_actor("DoseActor", "dose_perfil_axial")
+#    dose_perfil_axial.attached_to = "world"
+#    dose_perfil_axial.size        = [5, 5, 560]     
+#    dose_perfil_axial.spacing     = [5.0 * mm, 5.0 * mm, 0.25 * mm] 
+#    dose_perfil_axial.translation = [0, 0, 0]
+#    dose_perfil_axial.hit_type    = "random"
+#    dose_perfil_axial.dose.active = True
 
     # ==================================================
     #  ESTADÍSTICAS 
