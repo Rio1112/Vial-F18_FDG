@@ -170,7 +170,7 @@ if __name__ == "__main__":
     # ==================================================
     Z_ref = 0 * mm   # centro del contenedor
 
-    # ── Grupo A — justo afuera del contenedor ─────────
+    # ── Grupo A — mano agarrando el vial (palma + dedos) ──────
     det_palma             = sim.add_volume("Box", "det_palma")
     det_palma.mother      = "world"
     det_palma.size        = [95 * mm, 1 * mm, 70 * mm]   # area de agarre de una mano sobre el vial
@@ -178,45 +178,43 @@ if __name__ == "__main__":
     det_palma.color       = [1.5, 0.5, 0.0, 0.8]
     det_palma.translation = [0 * mm, -55 * mm, Z_ref]
 
-    
-
     det_dedos            = sim.add_volume("Box", "det_dedos")
     det_dedos.mother      = "world"
     det_dedos.size        = [1 * mm, 40.0 * mm, 70 * mm]
     det_dedos.material    = "G4_TISSUE_SOFT_ICRP"
     det_dedos.color       = [1.0, 0.0, 0.5, 0.8]
-    det_dedos.translation = [50*mm , -35* mm, 0 * mm]  
+    det_dedos.translation = [50 * mm, -35 * mm, 0 * mm]
 
     # ── Grupo B — técnico a 15cm DE LA SUPERFICIE del contenedor ──────
     DISTANCIA_A_SUPERFICIE_MM = 200.5   # 50.5mm(radio externo) + 150mm(15cm)
 
     det_torso             = sim.add_volume("Box", "det_torso")
     det_torso.mother      = "world"
-    det_torso.size        = [1 * mm, 300  * mm, 400 * mm]
-    det_torso.material    = "G4_TISSUE_SOFT_ICRP"   
+    det_torso.size        = [1 * mm, 300 * mm, 400 * mm]
+    det_torso.material    = "G4_TISSUE_SOFT_ICRP"
     det_torso.color       = [1.0, 0.8, 0.6, 0.8]
     det_torso.translation = [-DISTANCIA_A_SUPERFICIE_MM * mm, 0, Z_ref]
 
     det_cabeza             = sim.add_volume("Box", "det_cabeza")
     det_cabeza.mother      = "world"
     det_cabeza.size        = [1 * mm, 130 * mm, 170 * mm]
-    det_cabeza.material    = "G4_TISSUE_SOFT_ICRP"   
+    det_cabeza.material    = "G4_TISSUE_SOFT_ICRP"
     det_cabeza.color       = [0.0, 0.8, 1.0, 0.8]
     det_cabeza.translation = [-DISTANCIA_A_SUPERFICIE_MM * mm, 0, Z_ref + 450 * mm]
 
     det_manos             = sim.add_volume("Box", "det_manos")
     det_manos.mother      = "world"
-    det_manos.size        = [1 * mm, 80 * mm, 150  * mm]
-    det_manos.material    = "G4_TISSUE_SOFT_ICRP"  
+    det_manos.size        = [1 * mm, 80 * mm, 150 * mm]
+    det_manos.material    = "G4_TISSUE_SOFT_ICRP"
     det_manos.color       = [1.0, 0.4, 0.0, 0.8]
-    det_manos.translation = [-DISTANCIA_A_SUPERFICIE_MM * mm, 200 * mm , Z_ref - 180 * mm]
+    det_manos.translation = [-DISTANCIA_A_SUPERFICIE_MM * mm, 200 * mm, Z_ref - 180 * mm]
 
     dimensiones_detectores = {
         "det_palma":  ([95, 1, 70], [1.0 * mm, 1.0 * mm, 1.0 * mm]),
-        "det_dedos": ([1, 40, 70], [1.0 * mm, 1.0 * mm, 1.0 * mm]),
-        "det_torso":    ([1, 300, 400], [1.0 * mm, 1.0 * mm, 1.0 * mm]),
-        "det_cabeza":     ([1, 130, 170], [1.0 * mm, 1.0 * mm, 1.0 * mm]),
-        "det_manos":    ([1, 80, 150], [1.0 * mm, 1.0 * mm, 1.0 * mm]),
+        "det_dedos":  ([1, 40, 70], [1.0 * mm, 1.0 * mm, 1.0 * mm]),
+        "det_torso":  ([1, 300, 400], [1.0 * mm, 1.0 * mm, 1.0 * mm]),
+        "det_cabeza": ([1, 130, 170], [1.0 * mm, 1.0 * mm, 1.0 * mm]),
+        "det_manos":  ([1, 80, 150], [1.0 * mm, 1.0 * mm, 1.0 * mm]),
     }
     for nombre, (size_real, spacing_real) in dimensiones_detectores.items():
         actor                          = sim.add_actor("DoseActor", f"dose_{nombre}")
@@ -228,26 +226,20 @@ if __name__ == "__main__":
         actor.dose_uncertainty.active  = True
 
     # ==================================================
-    #  PERFILES DE LÍNEA — energía vs posición (radial y axial)
+    #  PERFIL DE LÍNEA RADIAL — energía/dosis vs posición,
+    #  hacia det_torso (único detector alineado con el eje X)
     # ==================================================
     dose_perfil_radial             = sim.add_actor("DoseActor", "dose_perfil_radial")
     dose_perfil_radial.attached_to = "world"
-    dose_perfil_radial.size        = [880, 5, 5]     
-    dose_perfil_radial.spacing     = [0.5 * mm, 5.0 * mm, 5.0 * mm]   
-    dose_perfil_radial.translation = [0, 0, 0]        
+    dose_perfil_radial.size        = [880, 5, 5]
+    dose_perfil_radial.spacing     = [0.5 * mm, 5.0 * mm, 5.0 * mm]
+    dose_perfil_radial.translation = [0, 0, 0]
     dose_perfil_radial.hit_type    = "random"
     dose_perfil_radial.dose.active = True
 
-#    dose_perfil_axial             = sim.add_actor("DoseActor", "dose_perfil_axial")
-#    dose_perfil_axial.attached_to = "world"
-#    dose_perfil_axial.size        = [5, 5, 560]     
-#    dose_perfil_axial.spacing     = [5.0 * mm, 5.0 * mm, 0.25 * mm] 
-#    dose_perfil_axial.translation = [0, 0, 0]
-#    dose_perfil_axial.hit_type    = "random"
-#    dose_perfil_axial.dose.active = True
 
     # ==================================================
-    #  ESTADÍSTICAS 
+    #  ESTADÍSTICAS
     # ==================================================
     stats                     = sim.add_actor("SimulationStatisticsActor", "Stats")
     stats.track_types_flag    = True
@@ -279,7 +271,7 @@ if __name__ == "__main__":
     duracion_s = time.time() - inicio
 
     # ==================================================
-    #  RESUMEN BÁSICO 
+    #  RESUMEN BÁSICO
     # ==================================================
     print("=" * 55)
     print("RESUMEN DE LA SIMULACIÓN")
@@ -292,7 +284,7 @@ if __name__ == "__main__":
     print("=" * 55)
 
     # ==================================================
-    #  METADATA 
+    #  METADATA
     # ==================================================
     metadata = {
         "n_primarios_simulados": N_PRIMARIES,
@@ -307,15 +299,13 @@ if __name__ == "__main__":
                 "cavidad_aire": [12.5, 16.5],
                 "plomo":        [16.5, 48.5],
                 "acero":        [48.5, 50.5],
-                "det_lateral_centro": 55.0,
-                "det_dedos_centro": 50,
-                "det_torso_centro": 200.5,
+                "det_torso_centro": -200.5,
             },
             "axial_mm": {
                 "agua":         [-35.5, -9.2],
                 "cavidad_aire": [-9.2, 37.0],
                 "plomo":        [37.0, 55.75],
-                "acero":        [55.75, 57.75]
+                "acero":        [55.75, 57.75],
             },
         },
     }
