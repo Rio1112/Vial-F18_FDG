@@ -1,0 +1,13 @@
+ObjectType = Image
+NDims = 3
+BinaryData = True
+BinaryDataByteOrderMSB = False
+CompressedData = False
+TransformMatrix = 1 0 0 0 1 0 0 0 1
+Offset = -219.75 -10 -10
+CenterOfRotation = 0 0 0
+AnatomicalOrientation = RAI
+ElementSpacing = 0.5 5 5
+DimSize = 880 5 5
+ElementType = MET_DOUBLE
+ElementDataFile = edep_with_uncertainty_from_doseactor_dose_perfil_radial-edep.raw
