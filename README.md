@@ -1,75 +1,43 @@
-# Vial F-18 FDG — Simulación dosimétrica comparativa con GATE 10
+# Simulación dosimétrica — Vial F-18 FDG
 
-Simulación Monte Carlo de un vial de F-18 FDG de 10 mCi con dos tipos de blindaje: plomo+acero inoxidable (CT/A-30) y tungsteno (CT/A-30W). El objetivo es comparar la dosis recibida por el técnico durante la manipulación y transporte nacional del vial.
+Comparación Monte Carlo (GATE 10) de dos contenedores blindados para F-18 FDG: plomo+acero (CT/A-30) y tungsteno (CT/A-30W), evaluando la dosis recibida por el técnico durante su manipulación.
 
-## Descripción
-
-El sistema modela un vial de vidrio con 10 mL de solución de F-18 FDG encapsulado en una cavidad de aire, rodeada por el blindaje correspondiente. Se simulan cinco detectores de tejido blando que representan distintas regiones del cuerpo del técnico: palma y dedos (en contacto con el contenedor) y torso, cabeza y manos (a 15 cm de la superficie externa).
-
-## Contenido del repositorio
+## Archivos
 
 | Archivo | Descripción |
 |---|---|
-| `vial_plomo.py` | Script de GATE: contenedor CT/A-30 (plomo + acero inoxidable) |
-| `vial_tungsteno.py` | Script de GATE: contenedor CT/A-30W (tungsteno puro) |
-| `Proyecto_Vial_Blindado.ipynb` | Notebook comparativo: mapas de calor, dosis en Sv, perfil de atenuación y transmitancia para ambos contenedores |
-| `output_pb/` | Resultados del contenedor de plomo (.mhd, .raw, metadata_simulacion.json) |
-| `output_tungsteno/` | Resultados del contenedor de tungsteno (.mhd, .raw, metadata_simulacion.json) |
+| `vial_plomo.py` | Simulación GATE — contenedor CT/A-30 |
+| `vial_tungsteno.py` | Simulación GATE — contenedor CT/A-30W |
+| `Proyecto_Vial_Blindado.ipynb` | Análisis comparativo de resultados |
+| `output_pb/` | Resultados del contenedor de plomo |
+| `output_tungsteno/` | Resultados del contenedor de tungsteno |
 
-## Requisitos
+## Qué analiza el notebook
 
-- GATE 10 (con opengate)
-- Python 3.10+
-- numpy, matplotlib
+- **Mapas de calor** — distribución espacial de dosis en cada detector
+- **Validación estadística** — incertidumbre relativa por detector (umbral 10%)
+- **Dosis equivalente en Sv** — por detector, escalada a 10 mCi y 1 hora de exposición
+- **Perfil de dosis vs posición** — atenuación a través de cada capa del blindaje desde la fuente hasta el torso
+- **Transmitancia corregida por ángulo sólido** — comparación directa de la eficiencia de atenuación entre ambos contenedores
+
+## Limitaciones estadísticas
+
+Los detectores desplazados del eje principal de radiación (`det_cabeza`, `det_manos`) presentan incertidumbre estadística por encima del umbral aceptable del 10%, debido a que el blindaje atenúa fuertemente la radiación en esas direcciones y muy pocos fotones simulados los alcanzan. Se estima que son necesarios al menos 500 millones de primarios para obtener resultados confiables en la mayoría de detectores, lo que equivale a aproximadamente 17 horas de cómputo en un solo hilo.
+
 
 ## Uso
 
-**1. Correr las simulaciones:**
 ```bash
 python vial_plomo.py
 python vial_tungsteno.py
 ```
-Cada script genera su propia carpeta de resultados (`output_pb/` y `output_tungsteno/`) con los archivos `.mhd/.raw` y `metadata_simulacion.json`.
 
-**2. Analizar los resultados:**
+Luego abrir `Proyecto_Vial_Blindado.ipynb` y ejecutar todas las celdas.
 
-Abrir `Proyecto_Vial_Blindado.ipynb` en JupyterLab y ejecutar todas las celdas en orden. Ajustar `TIEMPO_EXPOSICION_S` en la celda de parámetros según el escenario a evaluar.
+## Requisitos
 
-## Parámetros principales
-
-| Parámetro | Valor por defecto |
-|---|---|
-| Actividad | 10 mCi (F-18 FDG) |
-| Primarios simulados | 150,000,000 |
-| Tiempo de exposición (notebook) | 3600 s (1 hora) |
-| Physics list | QGSP_BIC_EMZ |
-
-## Geometría de los contenedores
-
-| Parámetro | CT/A-30 (plomo) | CT/A-30W (tungsteno) |
-|---|---|---|
-| Radio cavidad interior | 16.5 mm | 16.75 mm |
-| Espesor de blindaje lateral | 32.0 mm (Pb) | 29.5 mm (W) |
-| Radio externo | 50.5 mm | 46.25 mm |
-| Espesor tapa/base | 18.75 mm (Pb) + 2 mm (acero) | 21.75 mm (W) |
-
-## Detectores
-
-| Detector | Dimensiones | Posición | Representa |
-|---|---|---|---|
-| `det_palma` | 95×1×70 mm | Y = −55 mm | Palma apoyada sobre el contenedor |
-| `det_dedos` | 1×40×70 mm | X = +50 mm, Y = −35 mm | Dedos rodeando el contenedor |
-| `det_torso` | 1×300×400 mm | X = −200.5 mm | Torso del técnico a 15 cm |
-| `det_cabeza` | 1×130×170 mm | X = −200.5 mm, Z = +450 mm | Cabeza del técnico a 15 cm |
-| `det_manos` | 1×80×150 mm | X = −200.5 mm, Y = +200 mm, Z = −180 mm | Manos del técnico a 15 cm |
-
-## Resultados que entrega el notebook
-
-- Mapas de calor de dosis por detector (plomo vs tungsteno)
-- Incertidumbre estadística por detector (validación Monte Carlo)
-- Dosis absorbida en Gy y equivalente en Sv por detector
-- Perfil de dosis vs posición a través del blindaje
-- Transmitancia y comparación directa entre ambos contenedores
+- GATE 10 (opengate)
+- Python 3.10+, numpy, matplotlib
 
 ## Autor
 
