@@ -1,0 +1,8 @@
+{
+  "n_primarios_simulados": 2000000,
+  "R_mm": 200.0,
+  "espesor_mm": 5.0,
+  "hit_type": "pre",
+  "n_vox": 3,
+  "edep_teorica_MeV_por_foton": 0.008684445
+}

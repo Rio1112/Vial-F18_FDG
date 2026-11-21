@@ -1,0 +1,17 @@
+{
+  "material_blindaje": "Ninguno (fuente puntual de gamma 511 keV, sin vial)",
+  "n_primarios_simulados": 5000000,
+  "actividad_objetivo_mci": null,
+  "physics_list": "G4EmStandardPhysics_option4",
+  "fuente": "gamma 511 keV, puntual, isotropica, origen",
+  "detector": {
+    "nombre": "det_200mm",
+    "distancia_mm": 200,
+    "espesor_mm": 5.0,
+    "lado_mm": 200.0,
+    "k_lado": 1.0,
+    "voxeles": "1x3x3",
+    "material": "G4_TISSUE_SOFT_ICRP"
+  },
+  "nota": "Prueba de escala: Edep total te\u00f3rica 5.97e-4 MeV/fot\u00f3n (5 mm, 200 mm); escala con el espesor."
+}

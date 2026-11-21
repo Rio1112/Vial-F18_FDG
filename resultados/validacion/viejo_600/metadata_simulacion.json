@@ -1,0 +1,77 @@
+{
+  "material_blindaje": "Ninguno (vial en aire)",
+  "n_primarios_simulados": 5000000,
+  "actividad_objetivo_mci": 100.0,
+  "physics_list": "G4EmStandardPhysics_option4",
+  "fuente": "F-18 (ion 9 18), waterCil, cilindro",
+  "detector": {
+    "nombre": "det_600mm",
+    "distancia_mm": 600,
+    "tipo": "Plano vertical 5\u00d7600\u00d7600 mm (normal a X)",
+    "espesor_mm": 5.0,
+    "lado_mm": 600.0,
+    "k_lado": 1.0,
+    "voxeles": "1\u00d73\u00d73",
+    "espaciado_mm": [
+      5.0,
+      200.0,
+      200.0
+    ],
+    "area_voxel_cm2": 400.0,
+    "direccion": "+X",
+    "material": "G4_TISSUE_SOFT_ICRP",
+    "centros_voxel_mm": [
+      [
+        600.0,
+        -200.0,
+        -200.0
+      ],
+      [
+        600.0,
+        -200.0,
+        0.0
+      ],
+      [
+        600.0,
+        -200.0,
+        200.0
+      ],
+      [
+        600.0,
+        0.0,
+        -200.0
+      ],
+      [
+        600.0,
+        0.0,
+        0.0
+      ],
+      [
+        600.0,
+        0.0,
+        200.0
+      ],
+      [
+        600.0,
+        200.0,
+        -200.0
+      ],
+      [
+        600.0,
+        200.0,
+        0.0
+      ],
+      [
+        600.0,
+        200.0,
+        200.0
+      ]
+    ]
+  },
+  "fuente_centro_mm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "nota": "Un detector por simulacion \u2014 sin interferencia entre distancias."
+}

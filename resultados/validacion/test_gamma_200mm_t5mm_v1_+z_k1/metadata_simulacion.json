@@ -1,0 +1,14 @@
+{
+  "material_blindaje": "Ninguno (gamma 511 keV puntual, sin vial)",
+  "n_primarios_simulados": 5000000,
+  "physics_list": "G4EmStandardPhysics_option4",
+  "detector": {
+    "distancia_mm": 200,
+    "espesor_mm": 5.0,
+    "lado_mm": 200.0,
+    "k_lado": 1.0,
+    "eje": "+z",
+    "n_vox": 1,
+    "material": "G4_TISSUE_SOFT_ICRP"
+  }
+}

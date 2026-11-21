@@ -1,0 +1,80 @@
+{
+  "material_blindaje": "Ninguno (vial en aire)",
+  "n_primarios_simulados": 5000000,
+  "actividad_objetivo_mci": 100.0,
+  "physics_list": "G4EmStandardPhysics_option4",
+  "fuente": "F-18 (ion 9 18), waterCil, cilindro",
+  "detector": {
+    "nombre": "det_600mm",
+    "tipo": "C\u00e1scara esf\u00e9rica R=600\u2013605 mm centrada en la fuente",
+    "distancia_mm": 600,
+    "espesor_mm": 5.0,
+    "n_z": 11,
+    "centro_esfera_mm": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "material": "G4_TISSUE_SOFT_ICRP",
+    "densidad_g_cm3": 1.03,
+    "z_bordes_mm": [
+      -605.0,
+      -495.0,
+      -385.0,
+      -275.0,
+      -165.0,
+      -55.0,
+      55.0,
+      165.0,
+      275.0,
+      385.0,
+      495.0,
+      605.0
+    ],
+    "z_centros_mm": [
+      -550.0,
+      -440.0,
+      -330.0,
+      -220.0,
+      -110.0,
+      0.0,
+      110.0,
+      220.0,
+      330.0,
+      440.0,
+      550.0
+    ],
+    "masa_kg": [
+      2.0958808139189506,
+      2.144553247101635,
+      2.144553247101627,
+      2.144553247101627,
+      2.144553247101627,
+      2.1445532471016424,
+      2.144553247101627,
+      2.144553247101627,
+      2.144553247101627,
+      2.144553247101635,
+      2.0958808139189506
+    ],
+    "polar_centro_deg": [
+      156.44353569089876,
+      137.16657193393274,
+      123.36701296923175,
+      111.51018826688748,
+      100.5639775890586,
+      90.0,
+      79.4360224109414,
+      68.48981173311252,
+      56.63298703076825,
+      42.833428066067256,
+      23.556464309101234
+    ],
+    "nota_dosis": "Dosis[Gy] = Edep[MeV]*1.602e-13/masa_kg por rebanada. NO usar el *_dose.mhd (masa de caja)."
+  },
+  "fuente_centro_mm": [
+    0.0,
+    0.0,
+    0.0
+  ]
+}

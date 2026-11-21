@@ -1,0 +1,67 @@
+{
+  "material_blindaje": "Ninguno (vial en aire, plano en el origen)",
+  "n_primarios_simulados": 5000000,
+  "actividad_objetivo_mci": 100.0,
+  "physics_list": "G4EmStandardPhysics_option4",
+  "detector": {
+    "nombre": "det_1000mm",
+    "distancia_mm": 1000,
+    "espesor_mm": 5.0,
+    "lado_mm": 1000.0,
+    "voxeles": "1x3x3",
+    "material": "G4_TISSUE_SOFT_ICRP",
+    "centros_voxel_mm": [
+      [
+        1000.0,
+        -333.33333333333337,
+        -333.33333333333337
+      ],
+      [
+        1000.0,
+        -333.33333333333337,
+        0.0
+      ],
+      [
+        1000.0,
+        -333.33333333333337,
+        333.33333333333326
+      ],
+      [
+        1000.0,
+        0.0,
+        -333.33333333333337
+      ],
+      [
+        1000.0,
+        0.0,
+        0.0
+      ],
+      [
+        1000.0,
+        0.0,
+        333.33333333333326
+      ],
+      [
+        1000.0,
+        333.33333333333326,
+        -333.33333333333337
+      ],
+      [
+        1000.0,
+        333.33333333333326,
+        0.0
+      ],
+      [
+        1000.0,
+        333.33333333333326,
+        333.33333333333326
+      ]
+    ]
+  },
+  "fuente_centro_mm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "nota": "Plano en el origen sin traslado; vial trasladado a -DIST dentro de 'ensamble'."
+}

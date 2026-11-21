@@ -1,0 +1,77 @@
+{
+  "material_blindaje": "Ninguno (vial en aire)",
+  "n_primarios_simulados": 5000000,
+  "actividad_objetivo_mci": 100.0,
+  "physics_list": "G4EmStandardPhysics_option4",
+  "fuente": "F-18 (ion 9 18), waterCil, cilindro",
+  "detector": {
+    "nombre": "det_400mm",
+    "distancia_mm": 400,
+    "tipo": "Plano vertical 5\u00d7400\u00d7400 mm (normal a X)",
+    "espesor_mm": 5.0,
+    "lado_mm": 400.0,
+    "k_lado": 1.0,
+    "voxeles": "1\u00d73\u00d73",
+    "espaciado_mm": [
+      5.0,
+      133.33333333333334,
+      133.33333333333334
+    ],
+    "area_voxel_cm2": 177.7777777777778,
+    "direccion": "+X",
+    "material": "G4_TISSUE_SOFT_ICRP",
+    "centros_voxel_mm": [
+      [
+        400.0,
+        -133.33333333333331,
+        -133.33333333333331
+      ],
+      [
+        400.0,
+        -133.33333333333331,
+        0.0
+      ],
+      [
+        400.0,
+        -133.33333333333331,
+        133.33333333333337
+      ],
+      [
+        400.0,
+        0.0,
+        -133.33333333333331
+      ],
+      [
+        400.0,
+        0.0,
+        0.0
+      ],
+      [
+        400.0,
+        0.0,
+        133.33333333333337
+      ],
+      [
+        400.0,
+        133.33333333333337,
+        -133.33333333333331
+      ],
+      [
+        400.0,
+        133.33333333333337,
+        0.0
+      ],
+      [
+        400.0,
+        133.33333333333337,
+        133.33333333333337
+      ]
+    ]
+  },
+  "fuente_centro_mm": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "nota": "Un detector por simulacion \u2014 sin interferencia entre distancias."
+}

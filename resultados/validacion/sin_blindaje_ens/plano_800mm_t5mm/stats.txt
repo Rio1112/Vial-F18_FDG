@@ -1,0 +1,77 @@
+{
+    "runs": {
+        "value": 2,
+        "unit": null
+    },
+    "events": {
+        "value": 5000000,
+        "unit": null
+    },
+    "tracks": {
+        "value": 32532460,
+        "unit": null
+    },
+    "steps": {
+        "value": 157153081,
+        "unit": null
+    },
+    "init": {
+        "value": 766.824,
+        "unit": "ms"
+    },
+    "duration": {
+        "value": 2.72829,
+        "unit": "min"
+    },
+    "pps": {
+        "value": 30544,
+        "unit": null
+    },
+    "tps": {
+        "value": 198735,
+        "unit": null
+    },
+    "sps": {
+        "value": 960023,
+        "unit": null
+    },
+    "start_time": {
+        "value": "Fri Nov 20 13:44:45 2026",
+        "unit": null
+    },
+    "stop_time": {
+        "value": "Fri Nov 20 13:47:30 2026",
+        "unit": null
+    },
+    "sim_start_time": {
+        "value": 0.0,
+        "unit": "ps"
+    },
+    "sim_stop_time": {
+        "value": 1.0,
+        "unit": "s"
+    },
+    "threads": {
+        "value": 2,
+        "unit": null
+    },
+    "arch": {
+        "value": "Linux",
+        "unit": null
+    },
+    "python": {
+        "value": "3.9.25",
+        "unit": null
+    },
+    "track_types": {
+        "value": {
+            "F18": 5000000,
+            "O18": 5000000,
+            "e+": 4836447,
+            "e-": 2961013,
+            "gamma": 9735000,
+            "nu_e": 5000000
+        },
+        "unit": null
+    }
+}

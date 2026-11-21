@@ -1,0 +1,73 @@
+{
+    "runs": {
+        "value": 2,
+        "unit": null
+    },
+    "events": {
+        "value": 2000000,
+        "unit": null
+    },
+    "tracks": {
+        "value": 2510172,
+        "unit": null
+    },
+    "steps": {
+        "value": 10876374,
+        "unit": null
+    },
+    "init": {
+        "value": 776.706,
+        "unit": "ms"
+    },
+    "duration": {
+        "value": 14.0713,
+        "unit": "s"
+    },
+    "pps": {
+        "value": 142133,
+        "unit": null
+    },
+    "tps": {
+        "value": 178390,
+        "unit": null
+    },
+    "sps": {
+        "value": 772949,
+        "unit": null
+    },
+    "start_time": {
+        "value": "Fri Nov 20 13:53:28 2026",
+        "unit": null
+    },
+    "stop_time": {
+        "value": "Fri Nov 20 13:53:43 2026",
+        "unit": null
+    },
+    "sim_start_time": {
+        "value": 0.0,
+        "unit": "ps"
+    },
+    "sim_stop_time": {
+        "value": 1.0,
+        "unit": "s"
+    },
+    "threads": {
+        "value": 2,
+        "unit": null
+    },
+    "arch": {
+        "value": "Linux",
+        "unit": null
+    },
+    "python": {
+        "value": "3.9.25",
+        "unit": null
+    },
+    "track_types": {
+        "value": {
+            "e-": 509129,
+            "gamma": 2001043
+        },
+        "unit": null
+    }
+}
